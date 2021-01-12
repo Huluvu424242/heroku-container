@@ -1,39 +1,14 @@
-# node-js-getting-started
+[![Build Status](https://travis-ci.com/Huluvu424242/heroku-container.svg?branch=master)](https://travis-ci.com/Huluvu424242/heroku-container)
+![Github CI](https://github.com/Huluvu424242/heroku-container/workflows/Github%20CI/badge.svg)
+[![npm](https://img.shields.io/npm/v/@huluvu424242/heroku-container.svg)](https://www.npmjs.com/package/@huluvu424242/heroku-container)
+[![npm](https://img.shields.io/npm/dm/@huluvu424242/heroku-container.svg)](https://www.npmjs.com/package/@huluvu424242/heroku-container)
+[![Donate with paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/huluvu424242)
+![Keybase BTC](https://img.shields.io/keybase/btc/huluvu424242)
+# heruko-container
+Das Projekt realisiert einen Heroku Web Dyno. Dieser stellt einen laufenden Webserver zur Verfügung welche statische 
+Inhalte ausliefert. Zu den statischen Inhalten gehören Webkomponenten und Webanwendungen.
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+Jede Änderung am Code wird automatisch über github und travis gebaut und falls die Builds erfolgreich waren auf heroku
+deployed. Falls der Webcontainer nicht auf 0 skaliert ist, dann kann er erreicht werden unter: 
+https://huluvu424242.herokuapp.com/
 
-This application supports the [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
-
-## Running Locally
-
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
-
-```sh
-$ git clone https://github.com/heroku/node-js-getting-started.git # or clone your own fork
-$ cd node-js-getting-started
-$ npm install
-$ npm start
-```
-
-Your app should now be running on [localhost:5000](http://localhost:5000/).
-
-## Deploying to Heroku
-
-```
-$ heroku create
-$ git push heroku main
-$ heroku open
-```
-or
-
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
-
-## Documentation
-
-For more information about using Node.js on Heroku, see these Dev Center articles:
-
-- [Getting Started on Heroku with Node.js](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
