@@ -5,7 +5,7 @@
 [![Donate with paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/huluvu424242)
 ![Keybase BTC](https://img.shields.io/keybase/btc/huluvu424242)
 # heruko-container
-Das Projekt realisiert einen Heroku Web Dyno. Dieser stellt einen laufenden Webserver zur Verfügung welche statische 
+Das Projekt realisiert einen Heroku Web Dyno. Dieser stellt einen laufenden Webserver zur Verfügung welcher statische 
 Inhalte ausliefert. Zu den statischen Inhalten gehören Webkomponenten und Webanwendungen.
 
 Jede Änderung am Code wird automatisch über github und travis gebaut und falls die Builds erfolgreich waren auf heroku
