@@ -4,7 +4,7 @@ const appSpec = require('tape');
 
 // Start the app
 const env = Object.assign({}, process.env, {PORT: 5000});
-const child = spawn('node', ['../app/index.js'], {env});
+const child = spawn('node', ['app/index.js'], {env});
 
 appSpec('responds to requests', (t) => {
   t.plan(4);
