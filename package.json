@@ -7,7 +7,7 @@
   },
   "main": "app/index.js",
   "scripts": {
-    "build" "echo nix zu tun",
+    "build": "echo nix zu tun",
     "start": "node app/index.js",
     "test": "node app/app.spec.js"
   },
