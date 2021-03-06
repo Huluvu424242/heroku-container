@@ -1,6 +1,6 @@
 {
   "name": "heroku-container",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A sample Node.js app using Express 4",
   "engines": {
     "node": "14.x"
