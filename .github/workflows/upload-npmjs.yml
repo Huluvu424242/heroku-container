@@ -1,0 +1,24 @@
+name: Upload to NPM.com
+
+on:
+  push:
+    branches:
+      - 'release/**'
+      - '!release/**-snapshot'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to npm.com
+        if: "contains(github.event.head_commit.message, 'Release')"
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+        run: |
+          npm i
+          npm run build
+          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > .npmrc
+          npm publish  --access=public
+
+
