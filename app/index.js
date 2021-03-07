@@ -13,11 +13,11 @@ express()
     .get('/cool', (req, res) => res.send(cool()))
     .get('/times', (req, res) => res.send(showTimes()))
     .get('/feed/:feedurl', (req, res) => {
-        res.setHeader('Access-Control-Allow-Origin', 'origin');
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(feeder.getFeedData(req.params.feedurl));
     })
     .get('/feed/', (req, res) => {
-        res.setHeader('Access-Control-Allow-Origin', 'origin');
+        res.setHeader('Access-Control-Allow-Origin', '*');
         res.send(feeder.getFeedData(req.query.url, req.query.period, req.query.nostatistic));
     })
 
