@@ -12,8 +12,12 @@ express()
     .get('/', (req, res) => res.render('pages/index'))
     .get('/cool', (req, res) => res.send(cool()))
     .get('/times', (req, res) => res.send(showTimes()))
-    .get('/feed/:feedurl', (req, res) => res.send(feeder.getFeedData(req.params.feedurl)))
+    .get('/feed/:feedurl', (req, res) => {
+        res.setHeader('Access-Control-Allow-Origin', 'origin');
+        res.send(feeder.getFeedData(req.params.feedurl));
+    })
     .get('/feed/', (req, res) => {
+        res.setHeader('Access-Control-Allow-Origin', 'origin');
         res.send(feeder.getFeedData(req.query.url, req.query.period, req.query.nostatistic));
     })
 
