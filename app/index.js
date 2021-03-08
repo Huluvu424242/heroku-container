@@ -1,8 +1,7 @@
-const cool = require('cool-ascii-faces');
-const feeder = require('@huluvu424242/liona-feeds');
+const PORT = process.env.PORT || 5000;
 const express = require('express');
 const path = require('path');
-const PORT = process.env.PORT || 5000;
+const feeder = require('@huluvu424242/liona-feeds');
 
 express()
     .use(express.static(path.join(__dirname, '../public')))
@@ -10,19 +9,20 @@ express()
     .set('views', path.join(__dirname, '../views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
-    .get('/cool', (req, res) => res.send(cool()))
-    .get('/times', (req, res) => res.send(showTimes()))
+    .use(feeder.addCORSHeader)
     .get('/feed/:feedurl', (req, res) => {
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        res.send(feeder.getFeedData(req.params.feedurl));
+        res.send(feeder.getFeedData(req.params.feedurl, req.query.statistic));
     })
     .get('/feed/', (req, res) => {
-        // const origin = req.get('host') ||  req.get('origin') || "*";
-        const origin =  req.get('origin') || "*";
-        res.setHeader("Access-Control-Allow-Origin", origin );
-        res.setHeader("Access-Control-Allow-Headers",     "Origin, X-Requested-With, Content-Type, Accept");
-        res.setHeader('Access-Control-Allow-Methods', 'GET');
-        res.send(feeder.getFeedData(req.query.url, req.query.period, req.query.nostatistic));
+        const uuid = req.query.uuid;
+        if (uuid) {
+            res.send(feeder.getFeedDataFor(uuid, req.query.url, req.query.period, req.query.statistic));
+        } else {
+            res.send(feeder.getFeedData(req.query.url, req.query.statistic));
+        }
+    })
+    .delete('feed/', (req, res) => {
+        res.send(feeder.unsubscribeFeedFor(req.query.uuid, req.query.url));
     })
 
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
