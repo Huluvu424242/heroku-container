@@ -18,16 +18,18 @@ express()
             res.send(feeder.getFeedData(req.query.url, req.query.statistic));
         }
     })
+    .use(feeder.addCORSHeader)
     .get('/feeds/', (req, res) => {
         feeder.getRankedFeeds().subscribe(
             (values) => res.send(values)
         );
     })
+    .use(feeder.addCORSHeader)
     .get('/feed/:feedurl', (req, res) => {
         res.send(feeder.getFeedData(req.params.feedurl, req.query.statistic));
     })
-    .delete('feed/', (req, res) => {
-        res.send(feeder.unsubscribeFeedFor(req.query.uuid, req.query.url));
-    })
+    // .delete('feed/', (req, res) => {
+    //     res.send(feeder.unsubscribeFeedFor(req.query.uuid, req.query.url));
+    // })
 
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
