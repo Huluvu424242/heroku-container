@@ -1,6 +1,6 @@
 {
   "name": "heroku-container",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A sample Node.js app using Express 4",
   "main": "app/index.js",
   "unpkg": "dist/honey-news/honey-news.js",
