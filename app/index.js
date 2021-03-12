@@ -10,14 +10,6 @@ express()
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
     .use(feeder.addCORSHeader)
-    .get('/feeds/', (req, res) => {
-        feeder.getRankedFeeds().subscribe(
-            (values) => res.send(values)
-        );
-    })
-    .get('/feed/:feedurl', (req, res) => {
-        res.send(feeder.getFeedData(req.params.feedurl, req.query.statistic));
-    })
     .get('/feed/', (req, res) => {
         const uuid = req.query.uuid;
         if (uuid) {
@@ -25,6 +17,14 @@ express()
         } else {
             res.send(feeder.getFeedData(req.query.url, req.query.statistic));
         }
+    })
+    .get('/feeds/', (req, res) => {
+        feeder.getRankedFeeds().subscribe(
+            (values) => res.send(values)
+        );
+    })
+    .get('/feed/:feedurl', (req, res) => {
+        res.send(feeder.getFeedData(req.params.feedurl, req.query.statistic));
     })
     .delete('feed/', (req, res) => {
         res.send(feeder.unsubscribeFeedFor(req.query.uuid, req.query.url));
