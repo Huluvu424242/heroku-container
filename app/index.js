@@ -6,10 +6,10 @@ const feeder = require('@huluvu424242/liona-feeds');
 express()
     .use(express.static(path.join(__dirname, '../public')))
     .use('/@huluvu424242', express.static(path.join(__dirname, '../node_modules/@huluvu424242/honey-webcomponents/dist')))
-    .use(feeder.addCORSHeader)
     .set('views', path.join(__dirname, '../views'))
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
+    .use(feeder.addCORSHeader)
     .get('/feeds/', (req, res) => {
         feeder.getRankedFeeds().subscribe(
             (values) => res.send(values)
