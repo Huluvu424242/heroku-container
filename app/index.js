@@ -10,6 +10,11 @@ express()
     .set('view engine', 'ejs')
     .get('/', (req, res) => res.render('pages/index'))
     .use(feeder.addCORSHeader)
+    .get('/feeds/', (req, res) => {
+        feeder.getRankedFeeds().subscribe(
+            (values) => res.send(values)
+        );
+    })
     .get('/feed/:feedurl', (req, res) => {
         res.send(feeder.getFeedData(req.params.feedurl, req.query.statistic));
     })
