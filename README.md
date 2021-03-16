@@ -6,9 +6,13 @@
 ![Keybase BTC](https://img.shields.io/keybase/btc/huluvu424242)
 # heroku-container
 Das Projekt realisiert einen Heroku Web Dyno. Dieser stellt einen laufenden Webserver zur Verfügung welcher statische 
-Inhalte ausliefert. Zu den statischen Inhalten gehören Webkomponenten und Webanwendungen.
+Inhalte ausliefert. Zu den statischen Inhalten gehören:
+
+* Webkomponenten (@huluvu424242/honey-news)
+* Node Module (@huluvu424242/liona-feeds)
+* Webapp (RSS/Atom Reader via honey-news und liona-news)
 
 Jede Änderung am Code wird automatisch über github und travis gebaut und falls die Builds erfolgreich waren auf heroku
-deployed. Falls der Webcontainer nicht auf 0 skaliert ist, dann kann er erreicht werden unter: 
+deployed (nur der master). Falls der Webcontainer aus Kostengründen gerade nicht auf 0 skaliert ist, dann kann er erreicht werden unter: 
 https://huluvu424242.herokuapp.com/
 

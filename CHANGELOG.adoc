@@ -1,0 +1,49 @@
+= Changelog
+Alle wichtigen Änderungen am Projekt sind in dieser Datei dokumentiert.
+
+Das Format basiert auf http://keepachangelog.com/de/[Keep a Changelog].
+Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
+
+// == [3.1.1] fertiggestellt 2018-05-11
+== [X.X.X] undelivered
+
+=== Added
+
+*
+
+=== Changed
+
+*
+
+=== Removed
+
+*
+== [X.X.X] undelivered
+
+=== Added
+
+*
+
+=== Changed
+
+*
+
+=== Removed
+
+*
+
+== [0.0.11] fertiggestellt 2021-03-16
+
+=== Added
+
+* https://github.com/Huluvu424242/heroku-container/issues/4[issue 4] Feed Reader als Webseite
+* https://github.com/Huluvu424242/heroku-container/issues/2[issue 2] kommentierte Anwendung
+* project setup
+
+=== Changed
+
+* n/a
+
+=== Removed
+
+* n/a
