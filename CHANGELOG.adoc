@@ -32,10 +32,11 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 *
 
-== [0.0.11] fertiggestellt 2021-03-16
+== [0.0.12] fertiggestellt 2021-03-16
 
 === Added
 
+* project scoped mit @huluvu424242
 * https://github.com/Huluvu424242/heroku-container/issues/4[issue 4] Feed Reader als Webseite
 * https://github.com/Huluvu424242/heroku-container/issues/2[issue 2] kommentierte Anwendung
 * project setup
