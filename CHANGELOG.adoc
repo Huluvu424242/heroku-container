@@ -32,7 +32,7 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 *
 
-== [0.0.12] fertiggestellt 2021-03-16
+== [0.0.11, 0.0.12, 0.0.13] fertiggestellt 2021-03-16
 
 === Added
 
