@@ -1,6 +1,6 @@
 {
   "name": "heroku-container",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "A sample Node.js app using Express 4",
   "main": "app/index.js",
   "unpkg": "app/index.js",
