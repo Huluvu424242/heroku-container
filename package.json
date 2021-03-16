@@ -3,7 +3,7 @@
   "version": "0.0.10",
   "description": "A sample Node.js app using Express 4",
   "main": "app/index.js",
-  "unpkg": "dist/honey-news/honey-news.js",
+  "unpkg": "app/index.js",
   "files": [
     "app/"
   ],
@@ -34,7 +34,8 @@
     "ejs": "^2.5.6",
     "express": "^4.15.2",
     "@huluvu424242/honey-webcomponents": "0.0.1",
-    "@huluvu424242/liona-feeds": "2.3.0"
+    "@huluvu424242/liona-feeds": "2.3.0",
+    "@huluvu424242/honey-news": "0.0.1"
   },
   "devDependencies": {
     "got": "^11.3.0",
