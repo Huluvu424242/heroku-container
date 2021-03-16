@@ -31,7 +31,6 @@
     "node": "14.x"
   },
   "dependencies": {
-    "ejs": "^2.5.6",
     "express": "^4.15.2",
     "@huluvu424242/honey-webcomponents": "0.0.1",
     "@huluvu424242/liona-feeds": "2.3.0",

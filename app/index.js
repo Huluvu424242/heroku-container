@@ -6,9 +6,6 @@ const feeder = require('@huluvu424242/liona-feeds');
 express()
     .use(express.static(path.join(__dirname, '../public')))
     .use('/@huluvu424242/honey-news', express.static(path.join(__dirname, '../node_modules/@huluvu424242/honey-news/dist/')))
-    // .set('views', path.join(__dirname, '../views'))
-    // .set('view engine', 'ejs')
-    // .get('/', (req, res) => res.render('pages/index'))
     .use(feeder.addCORSHeader)
     .get('/feed/', (req, res) => {
         const uuid = req.query.uuid;
