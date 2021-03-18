@@ -46,11 +46,11 @@ const master = Replicate(db, 'master', "MASTER-1");
 const  WebSocket  = require('ws');
 
 const wss = new WebSocket.Server({ server });
-// wss.on('connection', (ws) => {
-//     console.log('Client connected');
-//     // ws.stream.pipe(master.createStream({tail: true})).pipe(stream);
-//     ws.on('close', () => console.log('Client disconnected'));
-// });
+wss.on('connection', (ws) => {
+    console.log('Client connected');
+    // ws.stream.pipe(master.createStream({tail: true})).pipe(stream);
+    ws.on('close', () => console.log('Client disconnected'));
+});
 
 const stream = WebSocket.createWebSocketStream(wss, { encoding: 'utf8' });
 
