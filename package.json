@@ -32,6 +32,10 @@
   },
   "dependencies": {
     "express": "^4.15.2",
+    "ws": "7.4.4",
+    "level": "6.0.1",
+    "level-sublevel": "6.6.5",
+    "level-replicate": "1.2.1",
     "@huluvu424242/honey-webcomponents": "0.0.1",
     "@huluvu424242/liona-feeds": "2.3.0",
     "@huluvu424242/honey-news": "0.0.1"
