@@ -34,7 +34,7 @@
     "express": "4.17.1",
     "@huluvu424242/honey-webcomponents": "0.0.1",
     "@huluvu424242/liona-feeds": "2.3.1",
-    "@huluvu424242/honey-news": "0.0.1"
+    "@huluvu424242/honey-news": "0.0.3"
   },
   "devDependencies": {
     "got": "11.8.2",
