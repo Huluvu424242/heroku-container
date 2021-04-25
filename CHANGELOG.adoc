@@ -18,7 +18,7 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 === Removed
 
 *
-== [X.X.X] undelivered
+== [0.0.14] fertiggestellt am 2021-04-25
 
 === Added
 
@@ -26,7 +26,8 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 === Changed
 
-*
+* liona-feeds in version 2.3.1 used
+* versions upgrade got and tape
 
 === Removed
 
