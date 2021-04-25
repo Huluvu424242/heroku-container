@@ -13,7 +13,7 @@ express()
        if( res.status(404)){
            redirect404(computeSegmentCount(2, 0));
        }
-    }
+    })
     .get('/feed/', (req, res) => {
         const uuid = req.query.uuid;
         if (uuid) {
