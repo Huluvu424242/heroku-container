@@ -1,6 +1,6 @@
 {
   "name": "@huluvu424242/heroku-container",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "description": "A sample Node.js app using Express 4",
   "main": "app/index.js",
   "unpkg": "app/index.js",
@@ -31,13 +31,13 @@
     "node": "14.x"
   },
   "dependencies": {
-    "express": "^4.15.2",
+    "express": "4.17.1",
     "@huluvu424242/honey-webcomponents": "0.0.1",
-    "@huluvu424242/liona-feeds": "2.3.0",
+    "@huluvu424242/liona-feeds": "2.3.1",
     "@huluvu424242/honey-news": "0.0.1"
   },
   "devDependencies": {
-    "got": "^11.3.0",
-    "tape": "^4.7.0"
+    "got": "11.8.2",
+    "tape": "5.2.2"
   }
 }
