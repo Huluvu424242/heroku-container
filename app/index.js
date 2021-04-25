@@ -2,11 +2,18 @@ const PORT = process.env.PORT || 5000;
 const express = require('express');
 const path = require('path');
 const feeder = require('@huluvu424242/liona-feeds');
+const redirect = require('../')
 
 express()
     .use(express.static(path.join(__dirname, '../public')))
     .use('/@huluvu424242/honey-news', express.static(path.join(__dirname, '../node_modules/@huluvu424242/honey-news/dist/')))
     .use(feeder.addCORSHeader)
+    .use("./redirect.js")
+    .use(function(req, res, next) {
+       if( res.status(404)){
+           redirect404(computeSegmentCount(2, 0));
+       }
+    }
     .get('/feed/', (req, res) => {
         const uuid = req.query.uuid;
         if (uuid) {
