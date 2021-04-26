@@ -10,6 +10,7 @@
   "scripts": {
     "build": "echo   ",
     "start": "node app/index.js",
+    "start-prod": "set NODE_ENV=production && node app/index.js",
     "test": "node app/app.spec.js"
   },
   "repository": {
