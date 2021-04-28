@@ -3,8 +3,9 @@ const express = require('express');
 const path = require('path');
 const feeder = require('@huluvu424242/liona-feeds');
 
+
 express()
-    .use(express.static(path.join(__dirname, '../public')))
+    .use("/", express.static(path.join(__dirname, '../public')))
     .use('/@huluvu424242/honey-news', express.static(path.join(__dirname, '../node_modules/@huluvu424242/honey-news/dist/')))
     .use(feeder.addCORSHeader)
     .get('/feed/', (req, res) => {
@@ -26,5 +27,9 @@ express()
     // .delete('feed/', (req, res) => {
     //     res.send(feeder.unsubscribeFeedFor(req.query.uuid, req.query.url));
     // })
+    .use((req, res, next) => {
+        res.sendFile(path.join(__dirname, '../public') + "/404.html");
+    })
 
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
+
