@@ -18,7 +18,13 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 === Removed
 
 *
-== [0.0.14] fertiggestellt am 2021-04-25
+
+
+== [0.0.16] fertiggestellt am 2021-05-02
+
+* honey-news version 0.0.4 used
+
+== [0.0.14-0.0.15] fertiggestellt am 2021-04-25
 
 === Added
 
