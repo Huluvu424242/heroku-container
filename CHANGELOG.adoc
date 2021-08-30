@@ -20,7 +20,7 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 *
 
 
-== [0.0.17] fertiggestellt am 2021-08-30
+== [0.0.17-0.0.18] fertiggestellt am 2021-08-30
 
 * upgrade honey-news to developer version 0.0.5
 
