@@ -1,7 +1,9 @@
-[![Build Status](https://travis-ci.com/Huluvu424242/heroku-container.svg?branch=master)](https://travis-ci.com/Huluvu424242/heroku-container)
+[![Build Status](https://app.travis-ci.com/Huluvu424242/heroku-container.svg?branch=master)](https://app.travis-ci.com/Huluvu424242/heroku-container)
 ![Github CI](https://github.com/Huluvu424242/heroku-container/workflows/Github%20CI/badge.svg)
-[![npm](https://img.shields.io/npm/v/heroku-container.svg)](https://www.npmjs.com/package/heroku-container)
-[![npm](https://img.shields.io/npm/dm/heroku-container.svg)](https://www.npmjs.com/package/heroku-container)
+https://img.shields.io/npm/dy/@huluvu424242/heroku-container
+[![npm](https://img.shields.io/npm/v/heroku-container.svg)](https://www.npmjs.com/package/@huluvu424242/heroku-container)
+[![npm](https://img.shields.io/npm/dy/@huluvu424242/heroku-container.svg)](https://www.npmjs.com/package/@huluvu424242/heroku-container)
+[![npm](https://img.shields.io/npm/dm/heroku-container.svg)](https://www.npmjs.com/package/@huluvu424242/heroku-container)
 [![Donate with paypal](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/huluvu424242)
 ![Keybase BTC](https://img.shields.io/keybase/btc/huluvu424242)
 # heroku-container
