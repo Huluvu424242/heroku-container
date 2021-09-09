@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/html">
+<html dir="ltr" lang="de" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
@@ -9,12 +9,27 @@
   <script type="text/javascript" src="redirect.js"></script>
   <script type="text/javascript">recieveRedirect()</script>
 
+  <!-- design module -->
+  <script type="module"
+          src="https://unpkg.com/@huluvu424242/honey-style-it@0.0.4/dist/honey-style-it/honey-style-it.esm.js"></script>
+  <script nomodule
+          src="https://unpkg.com/@huluvu424242/honey-style-it@0.0.4/dist/honey-style-it/honey-style-it.js"></script>
+  <!-- style module -->
+  <script type="module"
+          src="https://unpkg.com/@huluvu424242/honey-papercss-style@0.0.2/dist/honey-papercss-style/honey-papercss-style.esm.js"></script>
+  <script nomodule
+          src="https://unpkg.com/@huluvu424242/honey-papercss-style@0.0.2/dist/honey-papercss-style/honey-papercss-style.js"></script>
+
   <!-- app entry point  so load the app  -->
   <script type="module" src="/@huluvu424242/honey-news/honey-news/honey-news.esm.js"></script>
   <script nomodule src="/@huluvu424242/honey-news/cjs/honey-news.cjs.js"></script>
 </head>
 <body id="seite">
-<honey-news-style/>
+
+<honey-style-it>
+  <honey-papercss-style/>
+</honey-style-it>
+
 <honey-news site-basepath="/" local-basepath="/" />
 </body>
 </html>

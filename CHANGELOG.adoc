@@ -19,6 +19,12 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 *
 
+== [0.0.19] fertiggestellt am 2021-09-09
+
+* upgrade honey-news to version 0.0.6
+* use honey-style-it version 0.0.4
+* use honey-papercss-style version 0.0.2
+
 
 == [0.0.17-0.0.18] fertiggestellt am 2021-08-30
 
