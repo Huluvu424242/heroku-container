@@ -6,7 +6,7 @@ const feeder = require('@huluvu424242/liona-feeds');
 
 express()
     .use("/", express.static(path.join(__dirname, '../public')))
-    .use('/@huluvu424242/honey-news', express.static(path.join(__dirname, '../node_modules/@huluvu424242/honey-news/dist/')))
+    .use('/@huluvu424242/honey-news/', express.static(path.join(__dirname, '../node_modules/@huluvu424242/honey-news/dist/')))
     .use(feeder.addCORSHeader)
     .get('/feed/', (req, res) => {
         const uuid = req.query.uuid;
