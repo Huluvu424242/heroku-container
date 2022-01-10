@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/Huluvu424242/heroku-container#README.md",
   "engines": {
-    "node": "16.x"
+    "node": "16.13.1"
   },
   "dependencies": {
     "express": "4.17.2",
