@@ -23,6 +23,7 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 * upgrade honey-news to version 0.0.7
 * upgrade liona-feeds to version 2.3.3
+* versions upgrade for security issue
 
 
 == [0.0.19-0.0.20] fertiggestellt am 2021-09-09
