@@ -19,6 +19,10 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 *
 
+== [0.0.22] fertiggestellt am 2022-04-20
+
+* developer release of liona-feeds 2.3.5
+
 == [0.0.21] fertiggestellt am 2022-01-10
 
 * upgrade honey-news to version 0.0.7
