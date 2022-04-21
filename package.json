@@ -1,6 +1,6 @@
 {
   "name": "@huluvu424242/heroku-container",
-  "version": "0.0.13",
+  "version": "0.0.22",
   "description": "A sample Node.js app using Express 4",
   "main": "app/index.js",
   "unpkg": "app/index.js",
@@ -10,6 +10,7 @@
   "scripts": {
     "build": "echo   ",
     "start": "node app/index.js",
+    "start-prod": "set NODE_ENV=production && node app/index.js",
     "test": "node app/app.spec.js"
   },
   "repository": {
@@ -28,20 +29,24 @@
   },
   "homepage": "https://github.com/Huluvu424242/heroku-container#README.md",
   "engines": {
-    "node": "14.x"
+    "node": ">=16"
   },
   "dependencies": {
-    "express": "^4.15.2",
+    "express": "4.17.3",
     "ws": "7.4.4",
     "level": "6.0.1",
     "level-sublevel": "6.6.5",
     "level-replicate": "1.2.1",
     "@huluvu424242/honey-webcomponents": "0.0.1",
-    "@huluvu424242/liona-feeds": "2.3.0",
-    "@huluvu424242/honey-news": "0.0.1"
+    "@huluvu424242/liona-feeds": "2.3.5",
+    "@huluvu424242/honey-news": "0.0.7"
   },
   "devDependencies": {
-    "got": "^11.3.0",
-    "tape": "^4.7.0"
+    "got": "12.0.3",
+    "tape": "5.5.3"
+  },
+  "optionalDependencies": {
+    "@huluvu424242/honey-style-it": "0.0.4",
+    "@huluvu424242/honey-papercss-style": "0.0.2"
   }
 }

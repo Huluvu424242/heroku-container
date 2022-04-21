@@ -1,34 +1,40 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en" xmlns="http://www.w3.org/1999/html">
+<html dir="ltr" lang="de" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
 
+  <title>Honey-News Feed Reader</title>
+  <!-- infrastructur to load the app from route -->
+  <script type="text/javascript" src="redirect.js"></script>
+  <script type="text/javascript">recieveRedirect()</script>
+
+  <!-- style it -->
+  <!--  <script type="module"-->
+  <!--          src="https://unpkg.com/@huluvu424242/honey-style-it@0.0.5/dist/honey-style-it/honey-style-it.esm.js"></script>-->
+  <!--  <script nomodule-->
+  <!--          src="https://unpkg.com/@huluvu424242/honey-style-it@0.0.5/dist/cjs/honey-style-it.cjs.js"></script>-->
+  <!-- honey-papercss-style -->
+  <script type="module"
+          src="https://unpkg.com/@huluvu424242/honey-papercss-style@0.0.4/dist/honey-papercss-style/honey-papercss-style.esm.js"></script>
+  <script nomodule
+          src="https://unpkg.com/@huluvu424242/honey-papercss-style@0.0.4/dist/cjs/honey-papercss-style.cjs.js"></script>
+  <!-- honey-bulma-style -->
+  <script type="module"
+          src="https://unpkg.com/@huluvu424242/honey-bulma-style@0.0.1/dist/honey-bulma-style/honey-bulma-style.esm.js"></script>
+  <script nomodule
+          src="https://unpkg.com/@huluvu424242/honey-bulma-style@0.0.1/dist/cjs/honey-bulma-style.cjs.js"></script>
+
+  <!-- app entry point  so load the app  -->
   <script type="module" src="/@huluvu424242/honey-news/honey-news/honey-news.esm.js"></script>
   <script nomodule src="/@huluvu424242/honey-news/cjs/honey-news.cjs.js"></script>
-
-<style>
-  body{
-    background-color: aqua;
-  }
-  .wichtig{
-    color: red;
-    font-size: 2rem;
-  }
-
-</style>
 </head>
-<body id="seite" style="display: block">
+<body id="seite">
 
-<h1>Nutzung der honey-news Komponente</h1>
-<span class="wichtig">!!!</span> Das ist eine Demo Seite welche alle Feature der App zeigen soll - aus diesem Grund ist auch die Statistik eingeschaltet <span class="wichtig">!!!</span><br>
-Es werden nur Daten zu den abgerufenen Feeds gespeichert (in memory) wie: url, anzahl der abfragen, anzahl valider responses<br>
-Sollten Sie die Speicherung nicht wünschen - dann geben Sie bitte keinen neuen Feed ein.<br>
-Vielen Dank für Ihr Verständnis. <br>
-<hr>
+<honey-define-style>
+  <honey-papercss-style/>
+</honey-define-style>
 
-<honey-news />
-
+<honey-news site-basepath="/" local-basepath="/" />
 </body>
 </html>

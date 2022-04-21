@@ -18,7 +18,34 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 === Removed
 
 *
-== [X.X.X] undelivered
+
+== [0.0.22] fertiggestellt am 2022-04-20
+
+* developer release of liona-feeds 2.3.5
+
+== [0.0.21] fertiggestellt am 2022-01-10
+
+* upgrade honey-news to version 0.0.7
+* upgrade liona-feeds to version 2.3.3
+* versions upgrade for security issue
+
+
+== [0.0.19-0.0.20] fertiggestellt am 2021-09-09
+
+* upgrade honey-news to version 0.0.6
+* use honey-style-it version 0.0.4
+* use honey-papercss-style version 0.0.2
+
+
+== [0.0.17-0.0.18] fertiggestellt am 2021-08-30
+
+* upgrade honey-news to developer version 0.0.5
+
+== [0.0.16] fertiggestellt am 2021-05-02
+
+* honey-news version 0.0.4 used
+
+== [0.0.14-0.0.15] fertiggestellt am 2021-04-25
 
 === Added
 
@@ -26,7 +53,8 @@ Die Versionierung erfolgt nach http://semver.org/lang/de/[Semantic Versioning].
 
 === Changed
 
-*
+* liona-feeds in version 2.3.1 used
+* versions upgrade got and tape
 
 === Removed
 
