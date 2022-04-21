@@ -9,8 +9,10 @@
   ],
   "scripts": {
     "build": "echo   ",
-    "start": "node app/index.js",
-    "start-prod": "set NODE_ENV=production && node app/index.js",
+    "node": "node app/index.js",
+    "db": "node app/orbit.js",
+    "start": "concurrently --kill-others \"npm run node\" \"npm run db\"",
+    "start-prod":"set NODE_ENV=production && npm run start",
     "test": "node app/app.spec.js"
   },
   "repository": {
@@ -32,7 +34,11 @@
     "node": ">=16"
   },
   "dependencies": {
+    "concurrently": "7.1.0",
     "express": "4.17.3",
+    "orbit-db": "0.28.3",
+    "orbit-db-identity-provider": "0.4.0",
+    "ipfs": "0.62.2",
     "@huluvu424242/honey-webcomponents": "0.0.1",
     "@huluvu424242/liona-feeds": "2.3.5",
     "@huluvu424242/honey-news": "0.0.7"
