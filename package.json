@@ -34,6 +34,8 @@
   "dependencies": {
     "express": "4.17.3",
     "ws": "8.5.0",
+    "websocket-stream": "5.5.2",
+    "levelup": "5.1.1",
     "level": "8.0.0",
     "level-sublevel": "6.6.5",
     "level-replicate": "1.2.1",

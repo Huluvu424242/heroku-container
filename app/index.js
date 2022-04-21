@@ -4,7 +4,7 @@ const path = require('path');
 const feeder = require('@huluvu424242/liona-feeds');
 
 
-const server = express()
+const staticServer = express()
     .use("/", express.static(path.join(__dirname, '../public')))
     .use('/@huluvu424242/honey-news/', express.static(path.join(__dirname, '../node_modules/@huluvu424242/honey-news/dist/')))
     .use(feeder.addCORSHeader)
@@ -33,36 +33,65 @@ const server = express()
 
     .listen(PORT, () => console.log(`Listening on ${PORT}`));
 
+
+//
+//  Die Beispiele sind zu alt und arbeiten nicht mehr zusammen :( leveldb is too old
+//
+//  leveldb example: https://www.joocom.de/blog/posts/leveldb-in-nodejs-eine-einfuehrung/
+//  Heroku: https://devcenter.heroku.com/articles/node-websockets
+//
+
+
+
 // Datenbank leveldb mit client replicas via websocket
 
-const level = require('level')
-const SubLevel = require('level-sublevel')
+// const {Level} = require('level')
+// const sublevel = require('level-sublevel/legacy')
 const Replicate = require('level-replicate')
 
+
+var {Level} = require('level')
+
+var db = new Level('/db/leveldb-ring')
+
+
 // Datenbank initialisieren.
-const db = SubLevel(level('ring-db'));
+// const db = sublevel(new Level('db/leveldb-ring'));
 
 // Replication hinzufügen
-const master = Replicate(db, 'master', "MASTER-1");
+const master = Replicate(db, 'master', "MASTER-1", null);
 
 // Replication zwischen verbundenen Clients aufsetzen.
+const http = require('http');
+const server = http.createServer();
 
-const  WebSocket  = require('ws');
+const wss = require('websocket-stream').createServer({server}, (stream) => {
+    stream.pipe(master.createStream({tail: true})).pipe(stream);
+})
 
-const wss = new WebSocket.Server({ server });
-wss.on('connection', (ws) => {
-    console.log('Client connected');
-    // ws.stream.pipe(master.createStream({tail: true})).pipe(stream);
-    ws.on('close', () => console.log('Client disconnected'));
-});
+server.listen(9999);
 
-const stream = WebSocket.createWebSocketStream(wss, { encoding: 'utf8' });
 
-stream.pipe(master.createStream({tail: true})).pipe(stream);
-// process.stdin.pipe(duplex);
+
 
 
 //
-// const wss = require('websocket-stream').createServer({server}, (stream) => {
-//     stream.pipe(master.createStream({tail: true})).pipe(stream);
-// })
+// const WebSocket = require('ws');
+//
+// const wss = new WebSocket.Server({server});
+// wss.on('connection', (ws) => {
+//     console.log('Client connected');
+//     // ws.stream.pipe(master.createStream({tail: true})).pipe(stream);
+//     ws.on('close', () => console.log('Client disconnected'));
+// });
+//
+// const stream = WebSocket.createWebSocketStream(wss, {encoding: 'utf8'});
+//
+// stream.pipe(master.createStream({tail: true})).pipe(stream);
+// // process.stdin.pipe(duplex);
+//
+//
+// //
+// // const wss = require('websocket-stream').createServer({server}, (stream) => {
+// //     stream.pipe(master.createStream({tail: true})).pipe(stream);
+// // })
