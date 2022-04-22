@@ -19,13 +19,15 @@ const Identities = require('orbit-db-identity-provider');
 
     const ipfs = await IPFS.create(ipfsOptions)
 
-    // const identity = await Identities.createIdentity()
-    // console.log("Identity:", identity.toJSON());
-    // console.log("Public Key:", identity.publicKey)
+    const Identities = require('orbit-db-identity-provider')
+    const options = { id: 'local-id' }
+    const identity = await Identities.createIdentity(options)
+    console.log("Identity:", identity.toJSON());
+    console.log("Public Key:", identity.publicKey)
 
 
-    const orbitdb = await OrbitDB.createInstance(ipfs)
-    // const orbitdb = await OrbitDB.createInstance(ipfs, {identity: identity})
+    // const orbitdb = await OrbitDB.createInstance(ipfs)
+    const orbitdb = await OrbitDB.createInstance(ipfs, {identity: identity})
 
     const optionsToWrite = {
         // Give write access to the creator of the database
@@ -39,12 +41,17 @@ const Identities = require('orbit-db-identity-provider');
 
     console.log("DB Adresse:", db.address.toString())
 
-    await db.put({_id: 'test', name: 'test-doc-db', category: 'distributed'})
+    await db.put({_id: 'test1', name: 'test-doc-db', category: 'distributed'})
 
 
     const value2 = db.get('') // this gets all the entries in the database store
 
     console.log("Log ALL:",value2)
+
+    // Listen for updates from peers
+    db.events.on("replicated", address => {
+        console.log("### UPDATE: ",db.iterator({ limit: -1 }).collect())
+    })
 
 
 })();
