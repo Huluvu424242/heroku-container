@@ -1,1 +1,1 @@
-web: npm -i | node app/index.js
+web: node app/index.js
