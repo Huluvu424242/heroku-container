@@ -12,7 +12,7 @@ const Identities = require('orbit-db-identity-provider');
 
     // optional settings for the ipfs instance
     const ipfsOptions = {
-        repo: './ipfs1',
+        repo: './ipfs2',
         EXPERIMENTAL: {
             pubsub: true
         },
@@ -28,7 +28,7 @@ const Identities = require('orbit-db-identity-provider');
 
 
     // const orbitdb = await OrbitDB.createInstance(ipfs)
-    const orbitdb = await OrbitDB.createInstance(ipfs, {identity: identity})
+    const orbitdb = await OrbitDB.createInstance(ipfs, {identity: identity, directory: './orbitdb2'})
 
     const optionsToWrite = {
         // Give write access to the creator of the database
@@ -39,8 +39,9 @@ const Identities = require('orbit-db-identity-provider');
     }
 
     const db = await orbitdb.docs('test-db', optionsToWrite)
-
     console.log("DB Adresse:", db.address.toString())
+
+    await db.load();
 
     await db.put({_id: 'test1', name: 'test-doc-db', category: 'distributed'})
 
