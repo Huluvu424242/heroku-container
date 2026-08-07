@@ -33,7 +33,7 @@
   },
 
   "dependencies": {
-    "express": "4.17.3",
+    "express": "4.19.2",
     "@huluvu424242/honey-webcomponents": "0.0.1",
     "@huluvu424242/liona-feeds": "2.3.5",
     "@huluvu424242/honey-news": "0.0.7"
